@@ -36,7 +36,7 @@ Vitamins_Cofactors_Metabolism_Expression <- (2^Mean.Pathway.Exp)/(2^Mean.Control
 
 seurat@meta.data <- mutate(seurat@meta.data, Vitamins_Cofactors_Metabolism_Expression = Vitamins_Cofactors_Metabolism_Expression, .after = TCA_Cycle_Respiratory_Electron_transport_Expression)
 
-VlnPlot(seurat, group.by = 'orig.ident', features = 'Vitamins_Cofactors_Metabolism_Expression', pt.size = 0)
+VlnPlot(seurat, group.by = 'Modality', features = 'Vitamins_Cofactors_Metabolism_Expression', pt.size = 0)
 
 length(Bio.Oxi.Expression) == ncol(seurat.genes)  ## if this returns FALSE, it means that some cells are missing from Average1
 
